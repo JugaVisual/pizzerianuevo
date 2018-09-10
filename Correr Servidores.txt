@@ -1,0 +1,18 @@
+1-cmd como administrador
+
+2-npm install -g ionic cordova
+
+3-npn install -g json-server
+
+-cd hasta nuestra carpeta de Documents
+(cd ..\..\Users\Akira\Documents)
+- git clone URL DEL PROYECTO 
+- npm start
+
+- ionic serve (--lab)
+
+- Abrimos una nueva ventana de cmd como admin y nos vamos hasta json-serve dentro de pizzeria
+(cd ..\..\Users\Akira\Documents\pizzeria\json-serve)
+-json-Server --watch db.jason -d 2000
+
+- correr localhost:3000 en web
