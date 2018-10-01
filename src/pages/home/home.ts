@@ -14,9 +14,22 @@ import { Promotion } from '../../providers/dish/promotion';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  
+  dish:Dish;
+  leader:Leader;
+  promotions:Promotion;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+    private dishService: DishProvider,
+    private LeaderService: LeaderProvider,
+    private promotionService: PromotionProvider,
+    @Inject("DbURL") private dbURL ){
 
+  }
+   ngOnInit(){
+    this.getFeaturedDish();
+    this.getFeaturedLeaders();
+    this.getFeaturedPromotions();
   }
 
   getFeaturedDish(){
@@ -34,10 +47,10 @@ export class HomePage {
 
 }
 
-  }
+  
 
   getFeaturedLeaders(){
-  this.dishService
+  this.leaderService
   .getFeaturedLeaders()
   .suscribe(
   response => {
@@ -51,14 +64,14 @@ export class HomePage {
 
 }
 
-  }
+  
 
   getFeaturedPromotions(){
-  this.dishService
+  this.promotionService
   .getFeaturedPromotions()
   .suscribe(
   response => {
-  this.promotions = response[0];
+  this.promotion = response[0];
   console.log(this.promotion);
   },
   error =>{
@@ -67,5 +80,6 @@ export class HomePage {
   );
 
 	}
-		}
-			}
+}
+		
+		
