@@ -9,7 +9,7 @@ import { ListPage } from '../pages/list/list';
 import { AboutPage } from '../pages/about/about';
 import { MenuPage } from '../pages/menu/menu';
 import { ContactPage } from '../pages/contact/contact';
-
+import { dbURL } from "../shared/dburl";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,7 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     Dish,
     Leader,
-    Promotion
+    Promotion,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +40,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     Dish,
     Leader,
-    Promotion
+    Promotion,
   ],
   providers: [
     StatusBar,
@@ -48,7 +48,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Dish,
     Leader,
     Provider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: "dbURL", useValue: dbURL}
   ]
 })
 export class AppModule {}

@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit} from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { DishProvider } from '../../providers/dish/dish';
-import { LeaderProvider } from '../../providers/dish/leader';
-import { PromotionProvider } from '../../providers/dish/promotion';
+import { LeaderProvider } from '../../providers/leader/leader';
+import { PromotionProvider } from '../../providers/promotion/promotions';
 
-import { Dish } from '../../providers/dish/dish';
-import { Leader} from '../../providers/dish/leader';
-import { Promotion } from '../../providers/dish/promotion';
+import { Dish } from '../../shared/dish';
+import { Leader} from '../../shared/leader';
+import { Promotion } from '../../shared/promotion';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit{
   
   dish:Dish;
   leader:Leader;

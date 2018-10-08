@@ -1,1 +1,10 @@
-firstname, lastname, telnum, email, contacttype, message; todas de tipo string y agree tipo boolean. Exportamos aquí mismo una constante ContactType = [‘None’, ‘Tel’, ‘Email’];
+export interface feedback {
+    firstname: string;
+    lastname: string;
+    telnum: string;
+    email: string;
+    contacttype1: string;
+    message: string;
+    agree: boolean;
+} 
+const ContactType = ["None", "Tel", "Email"];

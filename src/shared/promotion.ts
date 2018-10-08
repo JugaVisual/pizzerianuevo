@@ -1,3 +1,8 @@
-id tipo number,  
-name, image, label, price, description tipo string 
-featured tipo boolean
+export interface Leader {
+	id: number;
+	name: string;
+	image: string;
+	laber: string;
+	price: string;
+	description: string;
+}

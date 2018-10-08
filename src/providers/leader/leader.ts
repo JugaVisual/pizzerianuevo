@@ -14,20 +14,21 @@ export class LeaderProvider {
 	}
 
 getLeaders(): Observable<Leader[]>{
-	return this.http.get(dbURL + ‘leader’).map(
+	return this.http.get<Leader[]>(dbURL + "leader").map(
 	res =>  res
 )
 }
 
-getLeaders(id: number): Observable<Leader>{
-	return this.http.get(dbURL + ‘leader/’ + id).map(
+getLeader(id: number): Observable<Leader>{	
+	return this.http.get<Leader>(dbURL + "leader/" + id).map(
 	res => res
 )
 }
-getFeaturedLeaders(): Observable<Leader>{
-	return this.http.get(dbURL + ‘leader?featured=true’).map(
+getFeaturedLeader(): Observable<Leader>{
+	return this.http.get<Leader>(dbURL + "leader?featured=true").map(
 	res => res
 )
-{ provide: ‘DbURL’, useValue: dbURL}
+}
+//{ provide: ‘DbURL’, useValue: dbURL}
 
 }
