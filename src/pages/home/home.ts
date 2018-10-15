@@ -16,12 +16,12 @@ import { Promotion } from '../../shared/promotion';
 export class HomePage implements OnInit{
   
   dish:Dish;
-  leader:Leader;
+  leader:Leader; 
   promotions:Promotion;
 
   constructor(public navCtrl: NavController,
     private dishService: DishProvider,
-    private LeaderService: LeaderProvider,
+    private leaderService: LeaderProvider,
     private promotionService: PromotionProvider,
     @Inject("DbURL") private dbURL ){
 
@@ -35,7 +35,7 @@ export class HomePage implements OnInit{
   getFeaturedDish(){
   this.dishService
   .getFeaturedDish()
-  .suscribe(
+  .subscribe(
   response => {
   this.dish = response[0];
   console.log(this.dish);
@@ -49,10 +49,10 @@ export class HomePage implements OnInit{
 
   
 
-  getFeaturedLeaders(){
+getFeaturedLeaders(){
   this.leaderService
-  .getFeaturedLeaders()
-  .suscribe(
+  .getFeaturedLeader()
+  .subscribe(
   response => {
   this.leader = response[0];
   console.log(this.leader);
@@ -69,10 +69,10 @@ export class HomePage implements OnInit{
   getFeaturedPromotions(){
   this.promotionService
   .getFeaturedPromotions()
-  .suscribe(
+  .subscribe(
   response => {
-  this.promotion = response[0];
-  console.log(this.promotion);
+  this.promotions = response[0];
+  console.log(this.promotions);
   },
   error =>{
   console.log(error);

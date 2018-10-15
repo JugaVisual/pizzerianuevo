@@ -1,4 +1,4 @@
-export interface Leader {
+export interface Promotion {
 	id: number;
 	name: string;
 	image: string;

@@ -10,6 +10,10 @@ import { AboutPage } from '../pages/about/about';
 import { MenuPage } from '../pages/menu/menu';
 import { ContactPage } from '../pages/contact/contact';
 import { dbURL } from "../shared/dburl";
+import { DishProvider } from "../providers/dish/dish";
+import { LeaderProvider } from "../providers/leader/leader";
+import { PromotionProvider } from "../providers/promotion/promotions";
+import { dbURL } from '../shared/dburl';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,14 +25,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     AboutPage,
     MenuPage,
-    ContactPage,
-    Dish,
-    Leader,
-    Promotion,
+    ContactPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,19 +39,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     AboutPage,
     MenuPage,
-    ContactPage,
-    Dish,
-    Leader,
-    Promotion,
+    ContactPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    Dish,
-    Leader,
-    Provider,
+    DishProvider,
+    PromotionProvider,
+    LeaderProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    {provide: "dbURL", useValue: dbURL}
+    {provide: "DbURL", useValue: dbURL}
   ]
 })
 export class AppModule {}
